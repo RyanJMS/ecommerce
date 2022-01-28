@@ -15,9 +15,9 @@ const Cart = ({
 
   const EmptyCart = () => (
     <Typography variant="subtitle1">
-      You have no items in your cart, please add your desired items.
+      You have no items in your cart,
       <Link to="/" className={classes.link}>
-        please add your desired items
+        &nbsp; please add items to your cart.
       </Link>
     </Typography>
   );
@@ -56,6 +56,8 @@ const Cart = ({
             type="button"
             variant="contained"
             color="primary"
+            component={Link}
+            to="/checkout"
           >
             CHECKOUT
           </Button>
