@@ -4,7 +4,12 @@ import CartItem from "./CartItem/CartItem";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart }) => {
+const Cart = ({
+  cart,
+  handleUpdateCartQuantity,
+  handleRemoveFromCart,
+  handleEmptyCart,
+}) => {
   console.log(cart);
   const classes = useStyles();
 
@@ -22,7 +27,11 @@ const Cart = ({ cart }) => {
       <Grid container spacing={3}>
         {cart.line_items.map((item) => (
           <Grid item xs={12} sm={4} key={item.id}>
-            <CartItem item={item} />
+            <CartItem
+              item={item}
+              onUpdateCartQty={handleUpdateCartQuantity}
+              onRemoveFromCart={handleRemoveFromCart}
+            />
           </Grid>
         ))}
       </Grid>
@@ -37,6 +46,7 @@ const Cart = ({ cart }) => {
             type="button"
             variant="contained"
             color="secondary"
+            onClick={handleEmptyCart}
           >
             EMPTY CART
           </Button>
