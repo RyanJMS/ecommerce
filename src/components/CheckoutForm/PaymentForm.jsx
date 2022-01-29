@@ -20,7 +20,6 @@ const PaymentForm = ({
 }) => {
   const handleSubmit = async (event, elements, stripe) => {
     event.preventDefault();
-
     if (!stripe || !elements) return;
 
     const cardElement = elements.getElement(CardElement);

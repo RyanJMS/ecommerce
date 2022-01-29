@@ -29,21 +29,21 @@ const App = () => {
   };
 
   const handleUpdateCartQty = async (lineItemId, quantity) => {
-    const response = await commerce.cart.update(lineItemId, { quantity });
+    const { cart } = await commerce.cart.update(lineItemId, { quantity });
 
-    setCart(response.cart);
+    setCart(cart);
   };
 
   const handleRemoveFromCart = async (lineItemId) => {
-    const response = await commerce.cart.remove(lineItemId);
+    const { cart } = await commerce.cart.remove(lineItemId);
 
-    setCart(response.cart);
+    setCart(cart);
   };
 
   const handleEmptyCart = async () => {
-    const response = await commerce.cart.empty();
+    const { cart } = await commerce.cart.empty();
 
-    setCart(response.cart);
+    setCart(cart);
   };
 
   const refreshCart = async () => {
